@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  backend:
+    build:
+      context: src
+      target: development
+    environment:
+      - ADDRESS=0.0.0.0:8000
+      - RUST_LOG=debug
+    networks:
+      - client-side
+    # - server-side
+    # depends_on:
+    #   - db
+    volumes:
+      - ./backend/src:/code/src
+      - backend-cache:/code/target
+
+# db:
+networks:
+  client-side: {}
+
+volumes:
+  backend-cache: {}
