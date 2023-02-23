@@ -8,8 +8,9 @@ enum Membership {
 struct Client {
     first_name: String,
     last_name: String,
-    member_join_date: DateTime<Utc>,
+    member_join_date: DateTime<>,
     membership: Membership,
+
 }
 
 
